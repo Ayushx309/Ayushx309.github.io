@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Poppins:wght@500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+#header{
+    width: 100%;
+    height: 50vh;
+    background: #080808;
+    background-size: cover;
+    background-position: center;
+
+}
+
+#header1{
+    width: 100%;
+    height: 50vh;
+    background: #080808;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.header-text{
+    margin-top: 10%;
+    font-size: 30px;
+
+}
+
+.hello{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.header-text-1{
+    margin-top: 10%;
+    font-size: 33px;
+
+}
+
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+
+.header-text-1 h1 span{
+    color: #ff004f;
+}
+
+.header-text h1{
+    font-size: 50px;
+}
+
+.contrainer1{
+    padding: 10px 10%;
+    padding-bottom: 200px;
+}
+
+.gallery{
+    width: 100%;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 8%;
+
+}
+
+.images{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+
+}
+
+.images img{
+    width: 100%;
+}
+
+.image{
+    transition: transform 0.5s;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+.body1{
+    background-color: #080808;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+.body2{
+    background-color: #080808;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    
+}
+
+
+.con{
+    width: 50%;
+    height: 66%;
+    overflow: auto;
+    border-radius: 12px;
+
+}
+
+.code-wrapper{
+    position: relative;
+}
+
+#copy-button{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 7px;
+    background-color: #2d2d2d;
+    outline: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    opacity: 0;
+    border: 1px solid #fff;
+
+}
+
+#copy-button.show-msg{
+    display: none;
+}
+
+#copy-button:hover{
+    background-color: #423e3e;
+}
+
+.code-wrapper:hover #copy-button{
+    opacity: 1;
+}

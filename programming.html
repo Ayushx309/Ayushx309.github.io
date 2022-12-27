@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Joshi - Web Developer, Programmer, Graphic Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <link rel="stylesheet" href="programming.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="https://kit.fontawesome.com/3db79b918b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- -----------------navbar----------------- -->
+
+    <div id="header">
+        <div class="contrainer">
+            <nav>
+                <a href="index.html"><img src="images/logo.png" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="index.html#header">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-compass" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>My <span>Programming</span> Skills <i class="fa-solid fa-laptop-code"></i></h1>
+                <p>Languages I Know</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- -----------------galllery----------------- -->
+
+    <div class="gallery">
+        <div class="images">
+            <a href="images/pythonimg.png" data-lightbox="models" data-title="Python Language" class="image">
+                <img src="images/pythonimg.png">
+            </a>
+            <a href="images/htmlimg.png" data-lightbox="models" data-title="Html Language" class="image">
+                <img src="images/htmlimg.png">
+            </a>
+            <a href="images/cssimg.png" data-lightbox="models" data-title="Css Language" class="image">
+                <img src="images/cssimg.png">
+            </a>
+            <a href="images/clangimg.png" data-lightbox="models" data-title="C Language" class="image">
+                <img src="images/clangimg.png">
+            </a>
+
+
+        </div>
+
+    </div>
+    <div id="header">
+        <div class="contrainer">
+            <div class="header-text-1">
+                <h1>Some of <span>Python Projects</span> <i class="fa-solid fa-diagram-project"></i></h1>
+            </div>
+        </div>
+    </div>
+    <div id="header">
+        <div class="contrainer">
+            <div class="header-text">
+                <h1>OogaBooga <span>Discord</span> Bot <i class="fa-brands fa-discord"></i></h1>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -----------------OogaBooga Bot----------------- -->
+
+    <div class="body1">
+        <div class="con">
+            <p>OogaBooga Bot Source Code. main.py</p>
+            <div class="code-wrapper">
+                <pre>
+            <code id="code" class="language-python">
+import discord
+from discord.ext import commands, tasks
+from discord.voice_client import VoiceClient
+import youtube_dl
+import asyncio
+import random
+from discord import app_commands
+from random import choice
+import json
+import requests
+from keep_alive import keep_alive
+
+
+
+client = commands.Bot(command_prefix='/',intents=discord.Intents.all())
+
+status = ['Eating!', 'Sleeping!','Gym!','OogaBooga!']
+queue = []
+loop = False
+
+@client.event
+async def on_ready():
+    change_status.start()
+    print(f'We have logged in as {client.user}')
+    try:
+        synced = await client.tree.sync()
+        print(f"Synced {len(synced)} command(s)")
+    except Exception as e:
+        print(e) 
+
+
+
+@client.event
+async def on_member_join(member):
+    channel = discord.utils.get(member.guild.channels, name='general')
+    await channel.send(f'Welcome {member.mention}!  Ready to jam out? See `/help` command for details!')
+
+
+
+
+
+@client.tree.command(name='ping')
+async def ping(ctx: discord.Interaction):
+    await ctx.response.send_message(f'**Pong!** Latency: {round(client.latency * 1000)}ms')
+
+
+
+
+@client.tree.command(name='hello')
+async def hello(ctx: discord.Interaction):
+    responses = ['***grumble*** Why did you wake me up?',
+                 'Top of the morning to you lad!', 'Hello, how are you?', 'Hi', '**Wasssuup!**']
+    await ctx.response.send_message(random.choice(responses))
+
+
+
+
+@client.tree.command(name='die')
+async def die(ctx: discord.Interaction):
+    responses = ['why have you brought my short life to an end',
+                 'i could have done so much more', 'i have a family, kill them instead']
+    await ctx.response.send_message(random.choice(responses))
+
+
+
+
+
+@client.tree.command(name='credits')
+async def credits(ctx: discord.Interaction):
+    await ctx.response.send_message('Made by `Ninja#0112`')
+    # await ctx.response.send_message('Thanks to `OogaBooga` for coming up with the idea')
+    # await ctx.response.send_message('Thanks to `Nobody :)` for helping with the `?die` and `?creditz` command')
+
+
+
+@client.tree.command(name='cool')
+async def cool_rate(ctx: discord.Interaction,member:discord.Member = None):
+    if member == None:
+         member = ctx.author
+
+    user_name= member.display_name
+    pfp = member.display_avatar
+    cool_rate = discord.Embed( title='**COOl RATE**',description=f'{user_name} is {random.randrange(101)}% Cool',color=discord.Colour.random())
+    cool_rate.set_thumbnail(url=pfp)
+    await ctx.response.send_message(embed=cool_rate)
+
+
+@client.tree.command(name='avatar')
+async def user_avatar(ctx: discord.Interaction,member:discord.Member = None):
+    if member == None:
+         member = ctx.author
+
+    user_name= member.display_name
+    pfp = member.display_avatar 
+    avatar = discord.Embed( title=f'{user_name} avatar!',color=discord.Colour.random())
+    avatar.set_image(url=pfp)
+    await ctx.response.send_message(embed=avatar)
+
+
+@client.tree.command(name='creditz')
+async def creditz(ctx: discord.Interaction):
+    await ctx.response.send_message('**No one but me, lozer!**')
+
+
+
+@client.tree.command(name='embed')
+@app_commands.describe(embed_title='Add title of embed!',embed_description='Add description of embed')
+async def make_embed(ctx: discord.Interaction,embed_title: str, embed_description: str,member:discord.Member = None):
+    if member == None:
+         member = ctx.author
+
+    user_name= member.display_name
+    pfp = member.display_avatar
+    title_1 = embed_title
+    description_1 =  embed_description 
+    user_embed = discord.Embed( title = title_1,description = description_1,color=discord.Colour.random())
+    user_embed.set_thumbnail(url=pfp)
+    await ctx.response.send_message(embed=user_embed)
+
+
+@client.tree.command(name='inspire')
+async def inspire_send(ctx: discord.Interaction):
+
+    get= requests.get("https://zenquotes.io/api/random")
+    json_data =json.loads(get.text)
+    quote = json_data[0]['q']
+    author = '-' + json_data[0]['a']
+        
+    inspire = discord.Embed(title=f'{quote}',color=discord.Colour.random())
+    inspire.set_footer(text=f'{author}')
+    await ctx.response.send_message(embed=inspire)
+
+
+
+@client.tree.command(name='help')
+async def help_send(ctx: discord.Interaction):
+        
+    help = discord.Embed(title=f'Commands',description='‎',color=discord.Colour.random())
+    help.add_field(name=f'/avatar',value='`Returns pfp of mentioned person`',inline=False)
+    help.add_field(name=f'/cool',value='`Returns cool rate of mentioned person`',inline=False)
+    help.add_field(name=f'/die',value='`Returns funny joke`',inline=False)
+    help.add_field(name=f'/embed',value='`Returns custom embed`',inline=False)
+    help.add_field(name=f'/credits',value='`Returns credits`',inline=False)
+    help.add_field(name=f'/hello',value='`Returns greeting`',inline=False)
+    help.add_field(name=f'/inspire',value='`Returns quote`',inline=False)
+    help.add_field(name=f'/ping',value='`Returns ping`',inline=False)
+    help.add_field(name=f'/creditz',value='`Returns Real credits`',inline=False)
+    help.add_field(name=f'‎',value='‎',inline=False)
+  
+    help.set_footer(text='Enjoy!',icon_url='https://cdn.discordapp.com/attachments/839435729993072660/1046308035246686268/gigachad.jpg')
+
+    await ctx.response.send_message(embed=help)
+
+
+
+@tasks.loop(seconds=69)
+async def change_status():
+    await client.change_presence(activity=discord.Game(choice(status)))
+
+keep_alive()
+client.run("BOT-TOKEN")
+
+            </code>
+        </pre>
+
+                <button id="copy-button">Copy</button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="header1">
+        <div class="contrainer">
+            <div class="header-text">
+                <p>This Discord Bot is packed with fun commands and features that will keep you entertained! With its
+                    built-in AI, you can ask it questions and it will respond with helpful information. It's the perfect
+                    companion for any Discord server, bringing a fun and interactive experience to your group chats. So
+                    join in the fun and bring your conversations to life with this amazing Discord Bot!</p>
+            </div>
+            </br>
+            </br>
+            <p class="hello">Join discord server to test the OogaBooga Bot</p>
+            <a href="https://discord.gg/6XRnJTs9kS" class="btn">Discord Server</a>
+        </div>
+
+
+        <!-- -----------------OogaBooga Voice Assistant----------------- -->
+
+        <div id="header">
+            <div class="contrainer">
+                <div class="header-text">
+                    <h1>OogaBooga <span>Voice Assistant</span> <i class="fa-solid fa-person-rifle"></i></h1>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="body1">
+            <div class="con">
+                <p>OogaBooga Voice Assistant Source Code. main.py</p>
+                <div class="code-wrapper">
+                    <pre>
+            <code id="code" class="language-python">
+                import json
+                import openai
+                import pyttsx3
+                import speech_recognition as sr
+                import webbrowser
+                from openai_apikey import apikey
+                
+                openai.api_key = "API-KEY"
+                
+                
+                def OogaBooga(question):
+                
+                    prompt=f'Ayush: {question}\n OogaBooga:'
+                
+                    response = openai.Completion.create(
+                        model="text-davinci-003",
+                        prompt=prompt,
+                        temperature=0.7,
+                        max_tokens=2000,
+                        top_p=1,
+                        frequency_penalty=0,
+                        presence_penalty=0,
+                        stop=['\Ayush']
+                    )
+                
+                    with open('user_response_logs.json', 'w') as file:
+                        file.write(str(response))
+                
+                    obj = json.loads(str(response))
+                    list = obj["choices"]
+                
+                    for i in range(len(list)):
+                        text_response = list[i].get("text")
+                
+                    return text_response
+                
+                
+                def speak(text):
+                
+                    engine.say(text)
+                    engine.runAndWait()
+                
+                
+                def take_Commands():
+                    r = sr.Recognizer()
+                
+                    with sr.Microphone() as mic:
+                
+                        print('Listening...')
+                        r.pause_threshold = 1
+                        audio = r.listen(mic)
+                
+                    try:
+                
+                        print("Recognizing...")
+                        text = r.recognize_google(audio, language='en-in')
+                        text = text.lower()
+                        print("Ayush Said: {} \n".format(text))
+                
+                    except Exception as e:
+                
+                        print("Say That Again...")
+                        speak("Say That Again...")
+                        return "say I can't hear you"
+                
+                    return text
+                
+                
+                engine = pyttsx3.init('sapi5')
+                voice = engine.getProperty('voices')
+                engine.setProperty('voice', voice[0].id)
+                
+                
+                if __name__ == '__main__':
+                
+                    speak("Welcome back sir. How can i help you?")
+                
+                    while True:
+                
+                        user = take_Commands()
+                        response = OogaBooga(user)
+                        
+                        if 'open browser' in user:
+                            webbrowser.open("www.google.com")
+                
+                        if 'open youtube' in user:
+                            webbrowser.open("www.youtube.com")
+                
+                        if 'open google' in user:
+                            webbrowser.open("www.google.com")
+                
+                        if 'open ai website' in user:
+                            webbrowser.open("https://openai.com/")
+                
+                        if 'patel motor driving school' in user:
+                            webbrowser.open('https://www.google.com/maps/place/Patel+Motor+Driving+School/@23.0008195,72.61666,15z/data=!4m5!3m4!1s0x0:0x12bfb739b50476f6!8m2!3d23.0008195!4d72.61666')
+                
+                        if 'exit' in user:
+                            speak("It was nice talking with you Sir")
+                            break
+                        else:
+                            print(f'OogaBooga Said: {response}')
+                            speak(response)
+                
+                
+            </code>
+        </pre>
+
+                    <button id="copy-button">Copy</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="header1">
+            <div class="contrainer">
+                <div class="header-text">
+                    <p>Our voice assistant created in Python is an artificial intelligence system designed to provide
+                        users with an enhanced personal assistant experience. It can understand natural language
+                        requests and respond to user commands accordingly. It provides a powerful set of features such
+                        as voice recognition, natural language processing, and machine learning to provide users with a
+                        seamless voice interaction experience. The voice assistant is capable of responding to a variety
+                        of requests such as providing directions, setting reminders, playing music, and more.</p>
+                </div>
+            </div>
+
+
+            <!-- -----------------Password Generator----------------- -->
+
+            <div id="header">
+                <div class="contrainer">
+                    <div class="header-text">
+                        <h1>Password <span>Generator</span> <i class="fa-solid fa-lock"></i></h1>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="body2">
+                <div class="con">
+                    <p>Password Generator Source Code. main.py</p>
+                    <div class="code-wrapper">
+                        <pre>
+                <code id="code" class="language-python">
+
+                    import random
+
+                    lower = "abcdefghijklmnopqrstuvwxyz"
+                    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    num = "0123456789"
+                    smybol = "!@#$%^&*()-=_+"
+                    string = lower + upper + num + smybol
+                    length = int(input("enter length of password:\n"))
+                    password = "".join(random.sample(string,length))
+                    print("Your new Password is :\n" + password)
+
+                    
+                </code>
+            </pre>
+
+                        <button id="copy-button">Copy</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="header1">
+                <div class="contrainer1">
+                    <div class="header-text">
+                        <p>This Password Generator is a Python-based program that creates secure and random passwords
+                            for any purpose. It uses a strong combination of alphanumeric characters, special
+                            characters, and upper and lowercase letters to create a secure password that is difficult to
+                            guess. It is free, open source, and easy to use, making it ideal for both personal and
+                            professional use.</p>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    <p>Copyright © Ayush Joshi. <i class="fa-solid fa-fire"></i></p>
+                </div>
+                <script>
+
+                    var sidemenu = document.getElementById("sidemenu");
+
+                    function openmenu() {
+                        sidemenu.style.right = "0";
+                    }
+                    function closemenu() {
+                        sidemenu.style.right = "-200px";
+                    }
+
+                </script>
+                <script src="lightbox-plus-jquery.js"></script>
+                <script src="prism.js"></script>
+                <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Joshi - Web Developer, Programmer, Graphic Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mywork.css">
+    <script src="https://kit.fontawesome.com/3db79b918b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <div class="contrainer">
+            <nav>
+                <a href="index.html"><img src="images/logo.png" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="index.html#header">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-compass" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>My <span>Works</span> <i class="fa-solid fa-briefcase"></i></h1>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="portfolio">
+        <div class="contrainer">
+            <div class="work-list">
+
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>Web Developer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, excepturi.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>Programmer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, excepturi.</p>
+                        <a href="programming.html"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>Graphic Designing</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, excepturi.</p>
+                        <a href="gallery.html"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+
+    <div class="copyright">
+        <p>Copyright © Ayush Joshi. <i class="fa-solid fa-fire"></i></p>
+    </div>
+    <script>
+        
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+    </script>
+
+    <script src="lightbox-plus-jquery.js"></script>
+
+</body>
+
+</html>
