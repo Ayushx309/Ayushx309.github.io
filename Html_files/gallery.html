@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Joshi - Web Developer, Programmer, Graphic Designer</title>
+    <link rel="stylesheet" href="/Css_files/styles.css">
+    <link rel="stylesheet" href="/Css_files/lightbox.css">
+    <link rel="stylesheet" href="/Css_files/gallery.css">
+    <script src="https://kit.fontawesome.com/3db79b918b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <div class="contrainer">
+            <nav>
+                <a href="index.html"><img src="/images/logo.png" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="index.html#header">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-compass" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Graphic <span>Designing</span> <i class="fa-solid fa-spray-can"></i></h1>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <div class="images">
+                <a href="/images/gallery/1.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/1.jpg">
+                </a>
+                <a href="/images/gallery/2.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/2.jpg">
+                </a>
+                <a href="/images/gallery/3.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/3.jpg">
+                </a>
+                <a href="/images/gallery/4.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/4.jpg">
+                </a>
+                <a href="/images/gallery/5.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/5.jpg">
+                </a>
+                <a href="/images/gallery/6.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/6.jpg">
+                </a>
+                <a href="/images/gallery/7.png" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/7.png">
+                </a>
+                <a href="/images/gallery/8.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/8.jpg">
+                </a>
+                <a href="/images/gallery/9.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/9.jpg">
+                </a>
+                <a href="/images/gallery/10.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/10.jpg">
+                </a>
+                <a href="/images/gallery/11.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/11.jpg">
+                </a>
+                <a href="/images/gallery/12.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/12.jpg">
+                </a>
+                <a href="/images/gallery/13.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/13.jpg">
+                </a>
+                <a href="/images/gallery/14.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/14.jpg">
+                </a>
+                <a href="/images/gallery/15.png" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/15.png">
+                </a>
+                <a href="/images/gallery/16.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/16.jpg">
+                </a>
+                <a href="/images/gallery/17.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/17.jpg">
+                </a>
+                <a href="/images/gallery/18.png" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/18.png">
+                </a>
+                <a href="/images/gallery/19.png" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/19.png">
+                </a>
+                <a href="/images/gallery/20.jpg" data-lightbox="models" data-title="caption" class="image">
+                    <img src="/images/gallery/20.jpg">
+                </a>
+
+            </div>
+            
+        </div>
+        
+        <div class="copyright">
+            <p>Copyright © Ayush Joshi. <i class="fa-solid fa-fire"></i></p>
+        </div>
+    </div>
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+    </script>
+
+    <script src="/Js_files/lightbox-plus-jquery.js"></script>
+
+</body>
+
+</html>

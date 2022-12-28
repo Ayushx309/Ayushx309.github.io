@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Joshi - Web Developer, Programmer, Graphic Designer</title>
+    <link rel="stylesheet" href="/Css_files/styles.css">
+    <link rel="stylesheet" href="/Css_files/404_page.css">
+    <script src="https://kit.fontawesome.com/3db79b918b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <div class="contrainer">
+            <nav>
+                <a href="index.html"><img src="/images/logo.png" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-compass" onclick="openmenu()"></i>
+            </nav>
+            </br>
+            </br>
+            <div class="wrapper">
+                <h2>Oops! Page not found.</h2>
+                <div>
+                    <img src="/images/Monster 404 Error-rafiki.svg" alt="404">
+                </div>
+                <h4>We can't find the page you're looking for.</h4>
+                <a href="index.html"><button type="button" class="main-btn">GO BACK TO HOME</button></a>
+            </div>
+
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div class="copyright">
+            <p>Copyright © Ayush Joshi. <i class="fa-solid fa-fire"></i></p>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+    </script>
+
+</body>
+
+</html>
