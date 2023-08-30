@@ -423,7 +423,7 @@ nav .fa-solid{
 }
 
 
-@media only screen and (max-width: 1012px){
+@media only screen and (max-width: 1024px){
   
     .header-text{
         margin-top: 30%;
@@ -432,7 +432,20 @@ nav .fa-solid{
     .header-text h1{
         font-size: 40px;
     }
+
+    .sub-title{
+        font-size: 35px;
+    }
+
+    .tab-links{
+        font-size: 12px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
 }
+
 
 
 @media only screen and (max-width: 890px){
