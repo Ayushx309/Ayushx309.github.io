@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Poppins:wght@500&display=swap');
 
+:root{
+    --theme-text-color-1: #ff004f;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -22,7 +26,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(/images/background.png);
+    background-image: url('../assets/background.png');
     background-size: cover;
     background-position: center
 
@@ -61,7 +65,7 @@ nav ul li a::after{
     content: '';
     width: 0%;
     height: 3px;
-    background: #ff004f;
+    background: var( --theme-text-color-1);
     position: absolute; 
     left: 0;
     bottom: -6px;
@@ -85,7 +89,7 @@ nav ul li a:hover::after{
 }
 
 .header-text h1 span{
-    color: #ff004f;
+    color: var( --theme-text-color-1);
 }
 
 /* -----------------about----------------- */
@@ -109,6 +113,7 @@ nav ul li a:hover::after{
 .about-col-1 img{
     width: 100%;
     border-radius: 15%;
+
 }
 
 .about-col-2{
@@ -141,7 +146,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: var( --theme-text-color-1);
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -216,7 +221,7 @@ nav ul li a:hover::after{
 }
 
 .services-list div:hover{
-    background: #ff004f;
+    background: var( --theme-text-color-1);
     transform: translateY(-10px);
 }
 
@@ -250,7 +255,7 @@ nav ul li a:hover::after{
 .layer{
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    background: linear-gradient(rgba(0,0,0,0.6), var( --theme-text-color-1));
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -275,7 +280,7 @@ nav ul li a:hover::after{
 
 .layer a{
     margin-top: 20px;
-    color: #ff004f;
+    color: var( --theme-text-color-1);
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
@@ -298,7 +303,7 @@ nav ul li a:hover::after{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #ff004f;
+    border: 1px solid var( --theme-text-color-1);
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -307,7 +312,7 @@ nav ul li a:hover::after{
 }
 
 .btn:hover{
-    background: #ff004f;
+    background: var( --theme-text-color-1);
 }
 
 /* -----------------contact----------------- */
@@ -327,7 +332,7 @@ nav ul li a:hover::after{
 }
 
 .contact-left p i{
-    color: #ff004f;
+    color: var( --theme-text-color-1);
     margin-right: 15px;
     font-size: 25px;
 
@@ -347,13 +352,13 @@ nav ul li a:hover::after{
 }
 
 .social-icons a:hover{
-    color: #ff004f;
+    color: var( --theme-text-color-1);
     transform: translateY(-5px);
 }
 
 .btn.btn2{
     display: inline-block;
-    background: #ff004f;
+    background: var( --theme-text-color-1);
 }
 
 
@@ -392,7 +397,7 @@ form btn2{
 }
 
 .copyright i{
-    color: #ff004f;
+    color: var( --theme-text-color-1);
 }
 
 /* -----------------css for small screens----------------- */
@@ -404,10 +409,37 @@ nav .fa-solid{
     display: none;
 }
 
+@media only screen and (max-width: 787px){
+    
+    #header{
+        background-image: url('../assets/phone-background.jpg');
+    }
+
+    .header-text{
+        margin-top: 50%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+
+    
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;    
+    }
+}
+
+
 @media only screen and (max-width: 600px){
     
     #header{
-        background-image: url(/images/phone-background.jpg);
+        background-image: url('../assets/phone-background.jpg');
     }
     .header-text{
         margin-top: 100%;
@@ -427,7 +459,7 @@ nav .fa-solid{
     }
 
     nav ul{
-        background: #ff004f;
+        background: var( --theme-text-color-1);
         position: fixed;
         top: 0;
         right: -200px;
@@ -472,6 +504,30 @@ nav .fa-solid{
         font-size: 14px;
     }
     
+}
+
+
+@media only screen and (max-width: 595px){
+    
+    .header-text{
+        margin-top: 70%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 404px){
+    
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
 }
 
 #msg{
