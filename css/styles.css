@@ -409,10 +409,44 @@ nav .fa-solid{
     display: none;
 }
 
-@media only screen and (max-width: 787px){
+
+
+@media only screen and (max-width: 1130px){
+  
+    .header-text{
+        margin-top: 30%;
+        font-size:20px;
+    }
+    .header-text h1{
+        font-size: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 1012px){
+  
+    .header-text{
+        margin-top: 30%;
+        font-size:20px;
+    }
+    .header-text h1{
+        font-size: 40px;
+    }
+}
+
+
+@media only screen and (max-width: 890px){
+  
+    .header-text{
+        margin-top: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
     
     #header{
-        background-image: url('../assets/phone-background.jpg');
+        background-image: url('../assets/phone-background.png');
     }
 
     .header-text{
@@ -439,7 +473,7 @@ nav .fa-solid{
 @media only screen and (max-width: 600px){
     
     #header{
-        background-image: url('../assets/phone-background.jpg');
+        background-image: url('../assets/phone-background.png');
     }
     .header-text{
         margin-top: 100%;
